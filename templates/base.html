@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log-in</title>
+  <link rel="stylesheet" href="\static\css\style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <style>
+    body {
+    background-image: url('/static/photos/OIP (5).jpeg');
+    background-size: 100%; /* Adjusts the size of the background image to cover the entire body */
+    background-position:100%; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    height: 100vh; /* Set height to 100% of viewport height */
+/* overflow: hidden; */
+    }
+</style>
+  <script src="https://kit.fontawesome.com/dbc089892f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="container-fluid">
+    <div class="form-box">
+      <h1 id="title">USER LOG-IN</h1>
+      <form method="POST" action="/login">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Your name</label>
+          <input type="text" name="name" class="form-control" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Your UID</label>
+          <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <!-- <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div> -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+      <button type="button" class="btn btn-outline-dark shadow-none me-2"><a href="/">GO BACk if You havn't registered!!</a> </button>
+    </div>
+    <p><h2>Forgot Uid</h2><a href="/forgot">Click Here!</a></p>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blockchain Transaction</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffffff, #2c3e50,#000000); /* Soft red to shades of black */
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+        animation: gradientBG 10s ease infinite;
+    }@keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    form {
+      margin: 0 auto;
+      max-width: 400px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* White shadow */
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="number"], input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 2px solid #ffffff; /* Red border */
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.1); /* Transparent white */
+      color: white;
+      box-sizing: border-box;
+    }
+    input[type="number"]:focus, input[type="text"]:focus {
+      outline: none;
+      border-color: #ff6b6b; /* Lighter red on focus */
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #ff7979; /* Red button */
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #ff6b6b; /* Lighter red on hover */
+    }
+    #result {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
+      border-radius: 5px;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7); /* Light gray */
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Blockchain App</h1>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <h1>Blockchain Transaction</h1>
+
+  <form id="transactionForm">
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" name="amount" required>
+
+    <label for="payerPublicKey">Payer Public Key:</label>
+    <input type="text" id="payerPublicKey" name="payerPublicKey" required>
+
+    <label for="payeePublicKey">Payee Public Key:</label>
+    <input type="text" id="payeePublicKey" name="payeePublicKey" required>
+
+    <button type="button" onclick="sendMoney()">Send Money</button>
+  </form>
+
+  <h2>Blockchain Status:</h2>
+  <pre id="result"></pre>
+
+  <footer>© 2024 Your Company</footer>
+
+  <script>
+    async function sendMoney() {
+      const amount = document.getElementById('amount').value;
+      const payerPublicKey = document.getElementById('payerPublicKey').value;
+      const payeePublicKey = document.getElementById('payeePublicKey').value;
+
+      const response = await fetch('http://localhost:3000/sendMoney', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ amount, payerPublicKey, payeePublicKey }),
+      });
+
+      const result = await response.json();
+      document.getElementById('result').textContent = JSON.stringify(result, null, 2);
+    }
+  </script>
+</body>
+</html>

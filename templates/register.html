@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Sign Up</title>
+  <!-- <link rel="stylesheet" href="\static\css\style.css"> -->
+  <!-- <style>
+    *{
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+    }
+    .container{
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(rgba(0,0,50,0.8),rgba(0,0,50,0,8)), url(background.png);
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    }
+    .form-box{
+        width: 90%;
+        max-width: 400px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        bottom: 50%;
+        top: 25%;
+        transform: translate(-50%,-50%);
+        background: #fff;
+        padding: 50px 60px 70px;
+        text-align: center;
+    }
+    .form-box h1{
+        font-size: 30px;
+        margin-bottom: 60px;
+        color: #3c00a0;
+        position: relative;
+    }
+    .form-box h1::after{
+        content: '';
+        width: 30px;
+        height: 4px;
+        border-radius: 3px;
+        background: #3c00a0;
+        position: absolute;
+        bottom: -12px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    .input-field{
+        background: #eaeaea;
+        margin: 15px 0;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        max-height: 65px;
+        transition: max-height 0.5s;
+        overflow: hidden;
+    }
+    input{
+        width: 100%;
+        background: transparent;
+        border: 0;
+        outline: 0;
+        padding: 18px 15px;
+    }
+    .input-field i{
+        margin-left: 15px;
+        color: #999;
+    }
+    form p{
+        text-align: left;
+        font-size: 13px;
+    }
+    form p a{
+        text-decoration: none;
+        color: #3c00a0;
+    }
+    btn-field{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    btn-field button{
+        flex-basis: 48%;
+        background: #3c00a0;  /* buttons colour */
+        color: #fff;
+        height: 40px;
+        border-radius: 20px;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        transition: background 1s;
+    }
+    .input-group{
+        height: 280px;
+    }
+    .btn-field button.disable{
+        background: #eaeaea;
+        color: #555;
+    }
+  </style> -->
+  <script src="https://kit.fontawesome.com/dbc089892f.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+    background-image: url('/static/photos/download.png');
+    background-size: 100%; /* Adjusts the size of the background image to cover the entire body */
+    background-position:100%; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    height: 100vh; /* Set height to 100% of viewport height */
+/* overflow: hidden; */
+    }
+</style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="form-box">
+      <h1 id="title">Sign Up If you are Refugee</h1>
+      <form method="POST" action="/" enctype="multipart/form-data">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">Name</span>
+          <input type="text" name="name" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required>
+        </div>
+        
+        <div class="input-group mb-3">
+          <input type="text" name="address" class="form-control" placeholder="Your Country" aria-label="Recipient's fullname" aria-describedby="basic-addon2" required>
+          <span class="input-group-text" id="basic-addon2">Address</span>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" name="email" class="form-control" placeholder="Optional" aria-label="Recipient's username" aria-describedby="basic-addon2">
+          <span class="input-group-text" id="basic-addon2">@example.com</span>
+        </div>
+        <!-- <div class="form-floating mb-3">
+          <input type="password" name="pass" class="form-control" id="floatingPassword" placeholder="Password" required>
+          <label for="floatingPassword">Password</label>
+        </div> -->
+        <div class="input-group mb-3">
+          <select class="form-select" name="gender" id="inputGroupSelect02">
+            <option selected>Choose...</option>
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+            <option value="3">Rather not say</option>
+          </select>
+          <label class="input-group-text" for="inputGroupSelect02">Gender</label>
+        </div>
+
+        <!-- <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon3">Phone number</span>
+          <input type="number" name="phonum" class="form-control" id="basic-url" aria-describedby="basic-addon3" required>
+        </div> -->
+        <div class="input-group mb-3">
+          <input type="file" name="profile" class="form-control" id="inputGroupFile02" required>
+          <label class="input-group-text" for="inputGroupFile02">Upload</label>
+        </div>
+        <div class="col-md-6 p-0 mb-3">
+          <label class="form-label">Date of birth</label>
+          <input name="dob" type="date" class="form-control shadow-none" required>
+        </div>
+<!--         
+        <div class="input-group mb-3">
+          <span class="input-group-text">$</span>
+          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+          <span class="input-group-text">.00</span>
+        </div>
+        
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+          <span class="input-group-text">@</span>
+          <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+        </div>
+        
+        <div class="input-group">
+          <span class="input-group-text">With textarea</span>
+          <textarea class="form-control" aria-label="With textarea"></textarea>
+        </div> -->
+        <div class="btn-field">
+          <button type="submit" class="btn btn-outline-dark shadow-none me-2">Sign Up</button>
+    <!-- <input type="submit" value="Sign-Up"> -->
+        </div>
+      </form>
+      <br>
+      <button type="submit" class="btn btn-outline-dark shadow-none me-2"><a href="/login">If you registered go to login</a></button>
+
+    </div>
+</body>
+</html>
+<!-- <script>
+  alert("Uid");
+</script> -->
+
+<!-- <div class="input-group">
+  <div class="input-field" id="nameField">
+    <i class="fa-solid fa-user"></i>
+    <input type="text" placeholder="Name" name="name">
+  </div>
+  <div class="input-field">
+    <i class="fa-solid fa-envelope"></i>
+    <input type="email" placeholder="email" name="email">
+  </div>
+  <div class="input-field">
+    <i class="fa-solid fa-lock"></i>
+    <input type="password" placeholder="password" name="pass">
+  </div>
+</div> -->
